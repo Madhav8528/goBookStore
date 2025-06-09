@@ -22,7 +22,7 @@ func init() {
 	db = config.GetDb()
 }
 
-func CreateBook(b *Book) *Book {
+func (b *Book) CreateBook() *Book {
 	db.NewRecord(b)
 	db.Create(&b)
 	return b
